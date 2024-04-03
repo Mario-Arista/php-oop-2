@@ -22,7 +22,7 @@ class Product {
      * @param  string $_name
      * @param  string $_image
      * 
-     * @param  int $_price
+     * @param  float $_price
      * 
      * @param  Category $_category
      * @param  string $_type
