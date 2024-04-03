@@ -4,9 +4,9 @@ require './Models/Product.php';
 require './Models/Category.php';
 
 // istanzio tre oggetti di classe Category
-$category1 = new Category(true, "<i class='fa-solid fa-dog fs-2 text-white bg-dark p-2'></i>", null);
-$category2 = new Category(false, null, "<i class='fa-solid fa-cat fs-2 text-white bg-dark p-2'></i>");
-$category3 = new Category(true, "<i class='fa-solid fa-dog fs-2 text-white bg-dark p-2'></i>", null);
+$category1 = new Category("cane", "<i class='fa-solid fa-dog fs-2 text-white bg-dark p-2'></i>");
+$category2 = new Category("gatto", "<i class='fa-solid fa-cat fs-2 text-white bg-dark p-2'></i>");
+$category3 = new Category("cane", "<i class='fa-solid fa-dog fs-2 text-white bg-dark p-2'></i>");
 
 
 

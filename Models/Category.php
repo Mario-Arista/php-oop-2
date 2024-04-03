@@ -1,26 +1,23 @@
 <?php
 
 /**
- * Calsse di Categoria: o per cane o per gatto
+ * Classe di Categoria: o per cane o per gatto
  */
 class Category {
 
-    public $isForDog;
-    public $catIcon;
-    public $dogIcon;
+    public $name;
+    public $icon;
 
     /**
      * __construct
      *
-     * @param  bool $_isForDog
-     * @param  string $_dogIcon
-     * @param  string $_catIcon
+     * @param  string $_name
+     * @param  string $_icon
      * 
      */
-    function __construct($_isForDog, $_dogIcon, $_catIcon) {
-        $this->isForDog = $_isForDog;
-        $this->dogIcon = $_dogIcon;
-        $this->catIcon = $_catIcon;
+    function __construct($_name, $_icon) {
+        $this->name = $_name;
+        $this->icon = $_icon;
 
     }
 

@@ -55,7 +55,7 @@ require 'db.php';
                     </div>
                     <div>
                         <strong class="position position-absolute top-0 end-0">
-                            <?php echo  $product->category->isForDog ? $product->category->dogIcon : $product->category->catIcon ?>
+                            <?php echo  $product->category->icon ?>
                         </strong>
                     </div>
                 </div>
