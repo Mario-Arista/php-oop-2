@@ -20,9 +20,8 @@ require 'db.php';
 
     <!-- CSS solo se mi servirà-->
     <style>
-        .product-poster {
-            width: 100%;
-            object-fit: cover;
+        .single-product {
+            height: 500px;
         }
 
     </style>
@@ -37,48 +36,39 @@ require 'db.php';
     
     <main class="container-fluid"> 
 
-        <div class="w-75 m-auto row">
+        <div class="w-75 m-auto row pt-4">
+            <?php foreach($products as $product) { ?>
 
-            <h2 class="text-dark pt-4 pb-4">Prodotti:</h2>
-
-            <?php
-                foreach($products as $product) {
-                    ?>
-                    <div class='d-flex flex-column justify-content-center align-items-center text-white mb-3 col-4 border border-2 border-black'>
-                        <div>
-                            <img class='product-poster img-fluid' src='<?php echo $product->image ?>' alt='<?php echo $product->name ?>'>
-                        </div>
-                        <div class='mt-2'>
-                            <strong class='text-dark'>
-                                Nome: <?php echo $product->name ?>
-                            </strong>
-                        </div>
-                        <div>
-                            <strong class='text-dark'>
-                                Prezzo: <?php echo $product->price . "€" ?> 
-                            </strong>
-                        <div>
-                            <strong class='text-dark'>
-                                Tipologia: <?php echo $product->type ?>
-                            </strong>
-                        </div>
-
-                        <div>
-                            <strong class='text-warning'>Icona </strong>
-                        </div>
-
+            <div class="single-product col-4 position position-relative border border-1 border-black">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div>
+                        <img class="product-poster img-fluid" src="<?php echo $product->image ?>" alt="<?php echo $product->name ?>">
                     </div>
-                    <?php
-                }
-            ?>
+                    <div class="mt-2">
+                        <strong class="text-dark">Nome: <?php echo $product->name ?></strong>
+                    </div>
+                    <div>
+                        <strong class="text-dark">Prezzo: <?php echo $product->price ?>€</strong>
+                    </div>
+                    <div>
+                        <strong class="position position-absolute bottom-0 end-0 text-white bg-dark p-2"><?php echo $product->type ?></strong>
+                    </div>
+                    <div>
+                        <strong class="position position-absolute top-0 end-0">
+                            <?php echo  $product->category->isForDog ? $product->category->dogIcon : $product->category->catIcon ?>
+                        </strong>
+                    </div>
+                </div>
+            </div>
 
+            <?php } ?>
         </div>
         
     </main>
 
 
-     <!-- BOOTSTRAP -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 

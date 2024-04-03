@@ -3,14 +3,10 @@
 require './Models/Product.php';
 require './Models/Category.php';
 
-$products = [
-
-];
-
 // istanzio tre oggetti di classe Category
-$category1 = new Category(true, false, "<i class='fa-solid fa-dog'></i>", null);
-$category2 = new Category(false, true, null, "<i class='fa-solid fa-cat'></i>");
-$category3 = new Category(true, false, "<i class='fa-solid fa-dog'></i>", null);
+$category1 = new Category(true, false, "<i class='fa-solid fa-dog fs-2 text-white bg-dark p-2'></i>", null);
+$category2 = new Category(false, true, null, "<i class='fa-solid fa-cat fs-2 text-white bg-dark p-2'></i>");
+$category3 = new Category(true, false, "<i class='fa-solid fa-dog fs-2 text-white bg-dark p-2'></i>", null);
 
 
 
