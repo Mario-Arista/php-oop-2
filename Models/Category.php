@@ -19,6 +19,12 @@ class Category {
         $this->name = $_name;
         $this->icon = $_icon;
 
+        // controllo se la categoria è cane p gatto
+        if($this->name !== "cane" && $this->name !== "gatto") {
+            throw new Exception("Il prodotto può essere solo di categoria 'cane' o 'gatto'");
+            
+        }
+
     }
 
 

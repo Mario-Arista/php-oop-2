@@ -30,10 +30,14 @@ class Product {
      * 
      */
     function __construct($_name, $_isAvailable, $_image, $_price, Category $_category, $_type ) {
+       
         $this->name = $_name;
         $this->isAvailable = $_isAvailable;
 
         $this->image = $_image;
+
+        $this->category = $_category;
+        $this->type = $_type;
 
         // Controllo che il prezzo è un numero && maggiore di zero
         if(is_numeric($_price) && $_price >= 0) {
@@ -46,9 +50,6 @@ class Product {
         } else {
             throw new Exception("Il prezzo fornito non è valido");
         }
-
-        $this->category = $_category;
-        $this->type = $_type;
 
         // controllo se il prodotto è disponibile
         if($this->isAvailable !== true) {

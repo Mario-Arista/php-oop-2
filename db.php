@@ -12,7 +12,19 @@ require './Models/Kennel.php';
 $dogCategory = new Category("cane", "<i class='fa-solid fa-dog fs-2 text-white bg-dark p-2'></i>");
 $catCategory = new Category("gatto", "<i class='fa-solid fa-cat fs-2 text-white bg-dark p-2'></i>");
 
+// Controllo per la categoria snakeCategory
 
+try {
+
+    // Scrivo il codice "a rischio"
+    $snakeCategory = new Category("serpente", "<i class='fa-solid fa-cat fs-2 text-white bg-dark p-2'></i>");
+
+} catch (Exception $e) {
+
+    // mi salvo l'errore generato in una variabile che poi mi preoccuperò di mostrare in pagina
+    $error3 = "Errore: " . $e->getMessage();
+
+}
 
 // Controllo per il prodotto food1 
 // Metto di proposito il prezzo scritto tra virgolette
@@ -82,8 +94,6 @@ try {
     $error2 = "Errore nel caricamento del prodotto food2: "  . $e->getMessage();
 
 }
-
-
 
 // creo un array con dentro i tre prodotti
 $products = [
