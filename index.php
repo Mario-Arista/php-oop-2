@@ -24,32 +24,42 @@ require 'db.php';
             object-fit: cover;
         }
 
+        .cane-gatto {
+            width: 100px;
+        }
+
     </style>
 
 </head>
 
-<body class="bg-light">
+<body class="bg-secondary">
 
     <header class="container-fluid bg-dark">
-        <h1 class="text-white fs-1 p-3 text-center">Negozio per animali</h1>
+        <div class="d-flex justify-content-between align-items-center m-auto w-75">
+            <img class="cane-gatto" src="https://static.vecteezy.com/system/resources/previews/022/983/455/original/dog-and-cat-free-illustration-icons-free-png.png" alt="immagine a caso">
+            <h1 class="text-white fs-1 p-3 text-center">Negozio per animali</h1>
+            <img class="cane-gatto" src="https://static.vecteezy.com/system/resources/previews/022/983/455/original/dog-and-cat-free-illustration-icons-free-png.png" alt="immagine a caso">
+        </div>
+        
     </header>
 
-    <div class="container py-5">
+    <div class="m-auto w-75 py-1">
 
         <?php 
         
+        // Stile dgli errori per mettere alla prova l'utente con le crisi epilettiche
         if ($error) {
             ?>
-            <div class="alert alert-dark" role="alert">
+            <div class="p-3 rounded-2 bg-success text-white mb-1 fw-bold">
                 <?= $error ?>
             </div>
-            <div class="alert alert-dark" role="alert">
+            <div class="p-3 rounded-2 bg-warning text-dark mb-1 fw-bold">
                 <?= $error2 ?>
             </div>
-            <div class="alert alert-dark" role="alert">
+            <div class="p-3 rounded-2 bg-success text-white mb-1 fw-bold">
                 <?= $error3 ?>
             </div>
-            <div class="alert alert-dark" role="alert">
+            <div class="p-3 rounded-2 bg-warning text-dark mb-1 fw-bold">
                 <?= $error4 ?>
             </div>
             <?php
@@ -60,10 +70,10 @@ require 'db.php';
     
     <main class="container-fluid"> 
 
-        <div class="row w-75 m-auto pt-4 pb-4">
+        <div class="row w-75 m-auto pt-1 pb-4">
             <?php foreach($products as $product) { ?>
 
-            <div class="col-4 position position-relative border border-1 border-black">
+            <div class="col-4 position position-relative border border-1 border-black bg-white">
                 <div class="d-flex flex-column justify-content-start align-items-center">
 
                     <!-- Immagine prodotto -->
