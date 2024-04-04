@@ -49,6 +49,9 @@ require 'db.php';
             <div class="alert alert-dark" role="alert">
                 <?= $error3 ?>
             </div>
+            <div class="alert alert-dark" role="alert">
+                <?= $error4 ?>
+            </div>
             <?php
         }
 

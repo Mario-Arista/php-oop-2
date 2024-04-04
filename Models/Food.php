@@ -26,6 +26,18 @@ class Food extends Product {
         $this->weight = $_weight;
         $this->ingredients = $_ingredients;
         $this->expireDate = $_expireDate;
+
+        // Controllo che il prezzo è un numero && maggiore di zero
+        if(is_numeric($_weight) && $_weight >= 0) {
+
+            // Converto $_weight in un numero float
+            // così se inserisco un numero tra virgolette nel db 
+            // me lo converte in float
+            $this->weight = floatval($_weight);
+
+        } else {
+            throw new Exception("Il peso fornito non è valido");
+        }
     }
 
 }

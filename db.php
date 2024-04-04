@@ -12,8 +12,8 @@ require './Models/Kennel.php';
 $dogCategory = new Category("cane", "<i class='fa-solid fa-dog fs-2 text-white bg-dark p-2'></i>");
 $catCategory = new Category("gatto", "<i class='fa-solid fa-cat fs-2 text-white bg-dark p-2'></i>");
 
+// Primo errore aggiuto di proposito 
 // Controllo per la categoria snakeCategory
-
 try {
 
     // Scrivo il codice "a rischio"
@@ -22,7 +22,7 @@ try {
 } catch (Exception $e) {
 
     // mi salvo l'errore generato in una variabile che poi mi preoccuperò di mostrare in pagina
-    $error3 = "Errore: " . $e->getMessage();
+    $error = "Errore nel caricamento della categoria snakeCategory: " . $e->getMessage();
 
 }
 
@@ -67,7 +67,7 @@ try {
 
 }
 
-// Primo errore aggiuto di proposito 
+// Secondo errore aggiuto di proposito 
 // Controllo per il kennel2 (con prezzo sbagliato)
 try {
 
@@ -77,11 +77,11 @@ try {
 } catch (Exception $e) {
 
     // mi salvo l'errore generato in una variabile che poi mi preoccuperò di mostrare in pagina
-    $error = "Errore nel caricamento del prodotto kennel2: "  . $e->getMessage();
+    $error2 = "Errore nel caricamento del prodotto kennel2: "  . $e->getMessage();
 
 }
 
-// Secondo errore aggiuto di proposito e commentato
+// Terzo errore aggiuto di proposito
 // Controllo per il food2 (con IsAvailable false)
 try {
 
@@ -91,7 +91,21 @@ try {
 } catch (Exception $e) {
 
     // mi salvo l'errore generato in una variabile che poi mi preoccuperò di mostrare in pagina
-    $error2 = "Errore nel caricamento del prodotto food2: "  . $e->getMessage();
+    $error3 = "Errore nel caricamento del prodotto food2: "  . $e->getMessage();
+
+}
+
+// Quarto errore aggiuto di proposito
+// Controllo per il food3 (peso sbagliato)
+try {
+
+    // Scrivo il codice "a rischio"
+    $food3 = new Food("Ultima", true, "https://static.ultima-affinity.com/catalog/8410650153186/3d-Pack/largeImage", 13.32, $dogCategory, "Cibo", "ciao", "Tonno, nutella", "12/24");
+
+} catch (Exception $e) {
+
+    // mi salvo l'errore generato in una variabile che poi mi preoccuperò di mostrare in pagina
+    $error4 = "Errore nel caricamento del prodotto food3: "  . $e->getMessage();
 
 }
 
