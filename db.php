@@ -12,7 +12,7 @@ require './Models/Kennel.php';
 $dogCategory = new Category("cane", "<i class='fa-solid fa-dog fs-2 text-white bg-dark p-2'></i>");
 $catCategory = new Category("gatto", "<i class='fa-solid fa-cat fs-2 text-white bg-dark p-2'></i>");
 
-// Primo errore aggiuto di proposito 
+// Primo errore aggiunto e stampato in pagina di proposito 
 // Controllo per la categoria snakeCategory
 try {
 
@@ -26,48 +26,14 @@ try {
 
 }
 
-// Controllo per il prodotto food1 
-// Metto di proposito il prezzo scritto tra virgolette
+// istanzio tre oggetti di classe diversa (Food, Toy, Kennel)
+// controllati con il try and catch
+$food1 = new Food("Ultima", true, "https://static.ultima-affinity.com/catalog/8410650153186/3d-Pack/largeImage", "13.32", $dogCategory, "Cibo", 10, "Tonno, nutella", "12/24");
+$toy1 = new Toy("Topino Giochino", true, "https://www.clappet.com/1828/gioco-gatto-topini-strisce-3-pz.jpg", 50.25, $catCategory, "Gioco", "Plastica", "Multicolore", "Small");
+$kennel1 = new Kennel("Cuccia Cozy Kingdom", true, "https://molinopisoni.it/51845-large_default/ferplast-domus-cuccia-per-cani-in-legno-di-pino-nordico.jpg", 25000, $dogCategory, "Cuccia", "Legno, plastica", "Marrone, Beige", "Big");
 
-try {
 
-    // Scrivo il codice "a rischio"
-    $food1 = new Food("Ultima", true, "https://static.ultima-affinity.com/catalog/8410650153186/3d-Pack/largeImage", "13.32", $dogCategory, "Cibo", 10, "Tonno, nutella", "12/24");
-
-} catch (Exception $e) {
-
-    // mi salvo l'errore generato in una variabile che poi mi preoccuperò di mostrare in pagina
-    $error = "Errore: " . $e->getMessage();
-
-}
-
-// Controllo per il prodotto toy1
-try {
-
-    // Scrivo il codice "a rischio"
-    $toy1 = new Toy("Topino Giochino", true, "https://www.clappet.com/1828/gioco-gatto-topini-strisce-3-pz.jpg", 50.25, $catCategory, "Gioco", "Plastica", "Multicolore", "Small");
-
-} catch (Exception $e) {
-
-    // mi salvo l'errore generato in una variabile che poi mi preoccuperò di mostrare in pagina
-    $error = "Errore: " . $e->getMessage();
-
-}
-
-// Controllo per il prodotto kenell1
-try {
-
-    // Scrivo il codice "a rischio"
-    $kennel1 = new Kennel("Letto Cozy Kingdom", true, "https://shop-cdn-m.mediazs.com/bilder/0/400/74696__cozy_kingdom_kuschelbett_fg_4623_0.jpg", 25000, $dogCategory, "Cuccia", "Cotone", "Blu, Beige", "Big");
-
-} catch (Exception $e) {
-
-    // mi salvo l'errore generato in una variabile che poi mi preoccuperò di mostrare in pagina
-    $error = "Errore: " . $e->getMessage();
-
-}
-
-// Secondo errore aggiuto di proposito 
+// Secondo errore aggiunto e stampato in pagina di proposito 
 // Controllo per il kennel2 (con prezzo sbagliato)
 try {
 
@@ -81,7 +47,7 @@ try {
 
 }
 
-// Terzo errore aggiuto di proposito
+// Terzo errore aggiunto e stampato in pagina di proposito 
 // Controllo per il food2 (con IsAvailable false)
 try {
 
@@ -95,7 +61,7 @@ try {
 
 }
 
-// Quarto errore aggiuto di proposito
+// Quarto errore aggiunto e stampato in pagina di proposito 
 // Controllo per il food3 (peso sbagliato)
 try {
 
@@ -109,7 +75,8 @@ try {
 
 }
 
-// creo un array con dentro i tre prodotti
+
+// creo un array con dentro i tre prodotti controllati
 $products = [
     $food1,
     $toy1,

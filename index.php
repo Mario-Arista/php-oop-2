@@ -20,13 +20,16 @@ require 'db.php';
 
     <!-- CSS solo se mi servirà-->
     <style>
-        .product-poster {
-            object-fit: cover;
-        }
 
-        .cane-gatto {
-            width: 100px;
-        }
+    .cane-gatto {
+        width: 100px;
+    }
+    
+    .product-poster {
+        object-fit: cover;
+    }
+
+
 
     </style>
 
@@ -43,23 +46,23 @@ require 'db.php';
         
     </header>
 
-    <div class="m-auto w-75 py-1">
+    <div class="m-auto w-75 py-2">
 
         <?php 
         
-        // Stile dgli errori per mettere alla prova l'utente con le crisi epilettiche
+        //  errori messi di propositocon try and catch
         if ($error) {
             ?>
-            <div class="p-3 rounded-2 bg-success text-white mb-1 fw-bold">
+            <div class="p-3 rounded-2 bg-light text-dark mb-1 fw-bold">
                 <?= $error ?>
             </div>
-            <div class="p-3 rounded-2 bg-warning text-dark mb-1 fw-bold">
+            <div class="p-3 rounded-2 bg-light text-dark mb-1 fw-bold">
                 <?= $error2 ?>
             </div>
-            <div class="p-3 rounded-2 bg-success text-white mb-1 fw-bold">
+            <div class="p-3 rounded-2 bg-light text-dark mb-1 fw-bold">
                 <?= $error3 ?>
             </div>
-            <div class="p-3 rounded-2 bg-warning text-dark mb-1 fw-bold">
+            <div class="p-3 rounded-2 bg-light text-dark mb-1 fw-bold">
                 <?= $error4 ?>
             </div>
             <?php
@@ -73,7 +76,7 @@ require 'db.php';
         <div class="row w-75 m-auto pt-1 pb-4">
             <?php foreach($products as $product) { ?>
 
-            <div class="col-4 position position-relative border border-1 border-black bg-white">
+            <div class="product col-4 position position-relative border border-1 border-black bg-white">
                 <div class="d-flex flex-column justify-content-start align-items-center">
 
                     <!-- Immagine prodotto -->
