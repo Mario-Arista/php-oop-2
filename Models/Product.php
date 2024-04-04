@@ -20,6 +20,7 @@ class Product {
      * __construct
      *
      * @param  string $_name
+     * @param  bool $_isAvailable
      * @param  string $_image
      * 
      * @param  float $_price
@@ -28,8 +29,10 @@ class Product {
      * @param  string $_type
      * 
      */
-    function __construct($_name, $_image, $_price, Category $_category, $_type ) {
+    function __construct($_name, $_isAvailable, $_image, $_price, Category $_category, $_type ) {
         $this->name = $_name;
+        $this->isAvailable = $_isAvailable;
+
         $this->image = $_image;
 
         $this->price = $_price;

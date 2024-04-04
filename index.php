@@ -20,8 +20,8 @@ require 'db.php';
 
     <!-- CSS solo se mi servirà-->
     <style>
-        .single-product {
-            height: 500px;
+        .product-poster {
+            object-fit: cover;
         }
 
     </style>
@@ -39,20 +39,64 @@ require 'db.php';
         <div class="w-75 m-auto row pt-4">
             <?php foreach($products as $product) { ?>
 
-            <div class="single-product col-4 position position-relative border border-1 border-black">
-                <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="col-4 position position-relative border border-1 border-black">
+                <div class="d-flex flex-column justify-content-start align-items-center">
+
+                    <!-- Immagine prodotto -->
                     <div>
                         <img class="product-poster img-fluid" src="<?php echo $product->image ?>" alt="<?php echo $product->name ?>">
                     </div>
+
+                    <!-- Se disponibile prodotto -->
+                    <div>
+                        <strong class="text-white bg-dark p-2"><?= $product->isAvailable ? "Disponibile" : "Non Disponibile" ?></strong>
+                    </div>
+
+                    <!-- Nome prodotto -->
                     <div class="mt-2">
                         <strong class="text-dark">Nome: <?php echo $product->name ?></strong>
                     </div>
+
+                    <!-- Prezzo prodotto -->
                     <div>
                         <strong class="text-dark">Prezzo: <?php echo $product->price ?>€</strong>
                     </div>
+
+                    <!-- Dettagli prodotto -->
+                    <div class="mt-4 mb-4">
+                        <strong class="text-dark d-flex flex-column align-items-center">
+                        <?php
+
+                        if($product instanceof Food) {
+                            echo '<div>Peso: ' . $product->weight . 'kg</div>' ;
+                            echo '<div>Ingredienti: ' . $product->ingredients . '</div>' ;
+                            echo '<div>Data di scadenza: ' . $product->expireDate . '</div>' ;
+
+                        } else if($product instanceof Toy) {
+
+                            echo '<div>Materiale: ' . $product->material . '</div>' ;
+                            echo '<div>Colori: ' . $product->colors . '</div>' ;
+                            echo '<div>Size: '. $product->size . '</div>';
+
+
+                        } else if($product instanceof Kennel) { 
+
+                            echo '<div>Materiale: ' . $product->material . '</div>' ;
+                            echo '<div>Colori: ' . $product->colors . '</div>' ;
+                            echo '<div>Size: '. $product->size . '</div>';
+
+                        }
+
+                        ?>
+                        </strong>
+                    </div>
+
+                    <!-- Tipo prodotto -->
                     <div>
                         <strong class="position position-absolute bottom-0 end-0 text-white bg-dark p-2"><?php echo $product->type ?></strong>
                     </div>
+
+                    <!-- Icona prodotto -->
                     <div>
                         <strong class="position position-absolute top-0 end-0">
                             <?php echo  $product->category->icon ?>
