@@ -36,7 +36,7 @@ require 'db.php';
     
     <main class="container-fluid"> 
 
-        <div class="w-75 m-auto row pt-4">
+        <div class="row w-75 m-auto pt-4 pb-4">
             <?php foreach($products as $product) { ?>
 
             <div class="col-4 position position-relative border border-1 border-black">

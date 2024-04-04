@@ -1,10 +1,13 @@
 <?php
+require_once __DIR__ . '/Traits/Sizeable.php';
+require_once __DIR__ . '/Traits/HasMaterial.php';
+require_once __DIR__ . '/Traits/HasColors.php';
 
 class Kennel extends Product {
+    use Sizeable;
+    use HasMaterial;
+    use HasColors;
 
-    public $material;
-    public $colors;
-    public $size;
     
     /**
      * __construct

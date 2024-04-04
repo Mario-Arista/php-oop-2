@@ -1,10 +1,13 @@
 <?php
+require_once __DIR__ . '/Traits/Sizeable.php';
+require_once __DIR__ . '/Traits/HasMaterial.php';
+require_once __DIR__ . '/Traits/HasColors.php';
 
 class Toy extends Product {
 
-    public $material;
-    public $colors;
-    public $size;
+    use Sizeable;
+    use HasMaterial;
+    use HasColors;
     
     /**
      * __construct
