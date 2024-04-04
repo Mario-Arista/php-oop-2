@@ -14,9 +14,6 @@ $catCategory = new Category("gatto", "<i class='fa-solid fa-cat fs-2 text-white 
 
 
 
-// Dichiaro error con null
-$error = null;
-
 // Controllo per il prodotto food1 
 // Metto di proposito il prezzo scritto tra virgolette
 
@@ -73,18 +70,18 @@ try {
 }
 
 // Secondo errore aggiuto di proposito e commentato
-// // Controllo per il food2 (con IsAvailable false)
-// try {
+// Controllo per il food2 (con IsAvailable false)
+try {
 
-//     // Scrivo il codice "a rischio"
-//     $food2 = new Food("Ultima", false, "https://static.ultima-affinity.com/catalog/8410650153186/3d-Pack/largeImage", 13.32, $dogCategory, "Cibo", 10, "Tonno, nutella", "12/24");
+    // Scrivo il codice "a rischio"
+    $food2 = new Food("Ultima", false, "https://static.ultima-affinity.com/catalog/8410650153186/3d-Pack/largeImage", 13.32, $dogCategory, "Cibo", 10, "Tonno, nutella", "12/24");
 
-// } catch (Exception $e) {
+} catch (Exception $e) {
 
-//     // mi salvo l'errore generato in una variabile che poi mi preoccuperò di mostrare in pagina
-//     $error2 = "Errore nel caricamento del prodotto food2: "  . $e->getMessage();
+    // mi salvo l'errore generato in una variabile che poi mi preoccuperò di mostrare in pagina
+    $error2 = "Errore nel caricamento del prodotto food2: "  . $e->getMessage();
 
-// }
+}
 
 
 
@@ -92,7 +89,7 @@ try {
 $products = [
     $food1,
     $toy1,
-    $kennel1
+    $kennel1,
 
 ];
 
