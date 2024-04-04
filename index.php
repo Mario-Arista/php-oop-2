@@ -33,6 +33,24 @@ require 'db.php';
     <header class="container-fluid bg-dark">
         <h1 class="text-white fs-1 p-3 text-center">Negozio per animali</h1>
     </header>
+
+    <div class="container py-5">
+
+        <?php 
+        
+        if ($error) {
+            ?>
+            <div class="alert alert-dark" role="alert">
+                <?= $error ?>
+            </div>
+            <div class="alert alert-dark" role="alert">
+                <?= $error2 ?>
+            </div>
+            <?php
+        }
+
+        ?>
+    </div>
     
     <main class="container-fluid"> 
 

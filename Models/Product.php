@@ -35,10 +35,26 @@ class Product {
 
         $this->image = $_image;
 
-        $this->price = $_price;
+        // Controllo che il prezzo è un numero && maggiore di zero
+        if(is_numeric($_price) && $_price >= 0) {
+
+            // Converto $_price in un numero float
+            // così se inserisco un numero tra virgolette nel db 
+            // me lo converte in float
+            $this->price = floatval($_price);
+
+        } else {
+            throw new Exception("Il prezzo fornito non è valido");
+        }
 
         $this->category = $_category;
         $this->type = $_type;
+
+        // controllo se il prodotto è disponibile
+        if($this->isAvailable !== true) {
+            throw new Exception("Il prodotto non è disponibile");
+            
+        }
 
     }
 
